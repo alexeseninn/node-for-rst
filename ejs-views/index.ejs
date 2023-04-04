@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>gayass</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link rel="stylesheet" href="/style.css">
+
+		<script defer src="/script.js" ></script>  
+    </head>
+
+    <body class="body">
+        <!--Home page style-->
+        <header class="header">
+			<div class="header-container">
+				<div class="header-logo">
+					<p>Cars from Japan</p>
+				</div>
+				<div class="menu-button">
+					<div class="dropdown">
+						<img src="/headerimg.png" width="40rem" alt="Кнопка «button»">
+						<div class="dropdown-content">
+							<button id="enterButton" class="no-button"><a href="#">Войти</a></button>
+							<a href="#thank-you">Оставить заявку</a>
+						</div>
+					</div>
+				</div>
+			</div>
+        </header>
+
+		<%- include('./partials/auth.ejs') %>
+
+		<div class="main">
+
+			<div class="left-side">
+				<a id="addPostButton" class="addPost" href="newpost.html">Добавить пост</a> 
+			</div>
+
+			<div class="center-side">
+
+				<!-- About us -->
+				<div class="about-us">
+					<div class="about-us-upside">
+						<h3 class="h3">О нас и нашей компании</h3>
+						<img src="/separator.png" alt="Separator" />
+					</div>
+					<div class="about-us-downside">
+						
+						<div class="about-container">
+							<h5 class="h5">Lorem, ipsum dolor.</h5>
+							<p class="text-about">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+						</div>
+
+						<div class="void"></div>
+							
+						<div class="about-container">
+							<h5 class="h5">Lorem, ipsum dolor.</h5>
+							<p class="text-about">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+						</div>
+
+						<div class="void"></div>
+
+						<div class="about-container">
+							<h5 class="h5">Lorem, ipsum dolor.</h5>
+							<p class="text-about">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+						</div>
+							
+					</div>
+				</div>
+			
+				<!-- Portfolio -->
+
+				<div class="portfolio">
+
+					<div class="portfolio-heading">
+						<h3 class="h3">Вот, что мы можем привезти</h3>
+						<img src="/separator.png" alt="separator" />
+					</div>
+						<div id="grid-items" class="grid-items">
+							<% if (posts.length) { %>
+								<% posts.forEach(({ id, title, createdAt, text, author }) => { %>
+									<div class="grid-item">
+										<img src="/portfolio/<%= title %>" class="img" alt="Portfolio" />
+										<div>
+											<h2 class="portfolio-carname"><%= text %></h2>
+											<p><%= author %></p>
+										</div>
+									</div>
+								<% }) %>
+							<% } %>
+						</div>
+				</div>
+
+				<!-- Features -->
+				<div class="features">
+
+					<div class="portfolio-heading">
+						<h3 class="h3">Почему нам доверяют</h3>
+						<img src="/separator.png" alt="separator" />
+					</div>
+
+					<div class="features-cases">
+								<div class="features-case">
+									<div>
+										<h5>REASON WHY RUSTAM NOT GAY</h5>
+										<h6>We define the trends. Enough Said!</h6>
+										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+									</div>
+								</div>
+								<div class="features-case">
+									<div>
+										<h5>REASON WHY RUSTAM NOT GAY</h5>
+										<h6>We define the trends. Enough Said!</h6>
+										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+									</div>
+								</div>
+								<div class="features-case">
+									<div>
+										<h5>REASON WHY RUSTAM NOT GAY</h5>
+										<h6>We define the trends. Enough Said!</h6>
+										<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+									</div>
+								</div>
+					</div>
+				</div>
+			
+				<!-- Achivement -->
+				<div class="achivement">
+					<div class="overlay sections">
+						<div class="achivement-content">
+							<div class="col-sm-8 col-xs-12">
+								<div class="achivement-details">
+									<h2>Доставим вам машину</h2>
+									<p>Our last responsive work in process. Just use the link below to watch what we are doing right now. Hope you like it!</p>
+								</div>
+							</div>
+							<div class="achivement-photo">
+								<img src="/iphone.png" alt="Gallery Image" />
+							</div>
+						</div>
+					</div>		
+				</div>
+
+
+				<!-- Counterup -->
+				<div class="counterups">
+									<div class="counterup">
+										<div class="counterup-photo">
+											<img src="/counterup/1.png" alt="counterup" />
+										</div>
+										<div class="counterup-content">
+											<h5 class="count-number">11</h5>
+											<h6>Workers</h6>
+										</div>
+									</div>
+								
+									<div class="counterup">
+										<div class="counterup-photo">
+											<img src="/counterup/2.png" alt="counterup" />
+										</div>
+										<div class="counterup-content">
+											<h5 class="count-number">6542</h5>
+											<h6>Cars prevezeno</h6>
+										</div>
+									</div>
+								
+									<div class="counterup">
+										<div class="counterup-photo">
+											<img src="/counterup/3.png" alt="counterup" />
+										</div>
+										<div class="counterup-content">
+											<h5 class="count-number">254</h5>
+											<h6>Details prevezeno</h6>
+										</div>
+									</div>
+								
+									<div class="counterup">
+										<div class="counterup-photo">
+											<img src="/counterup/4.png" alt="counterup" />
+										</div>
+										<div class="counterup-content">
+											<h5 class="count-number">435</h5>
+											<h6>Drunk coffee</h6>
+										</div>
+									</div>
+				</div>
+				
+
+
+				<!-- Sections -->
+				<div id="thank-you" class="thankyou">
+				
+					<div class="heading-content text-center">
+						<h3>Оставить заявку!</h3>
+					</div>
+				
+					<!-- thank you -->
+						<div class="wrapper">
+								<div class="thank-you-form">
+									<div>
+										<div class="form-group">
+											<input id="name" type="text" class="form-control1" placeholder="name">
+										</div>
+										<div class="form-group">
+											<input id="email" type="email" class="form-control2" placeholder="email">
+										</div>
+										
+										<div class="form-group">
+											<input id="message" class="form-control3" placeholder="message"></input>
+										</div>
+									</div>
+										
+									<div class="buttontq">
+										<button id="sendMessage">send</button>
+									</div>
+								</div>
+						</div>
+				</div> <!-- /container -->   
+			</div>
+		</div>    
+		
+        <!--Footer-->
+        <footer class="footer">
+				<p>Made by drl1ng.</p>
+        </footer>
+    </body>
+</html>

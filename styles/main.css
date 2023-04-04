@@ -3,8 +3,7 @@ body {
   min-height: calc(100vh - 90px);
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  background: linear-gradient(to bottom, #00d2ff, #928dab);
-  color: #fff;
+  color: #212121;
 }
 
 h1 {
@@ -19,7 +18,7 @@ nav {
   min-height: 60px;
   display: flex;
   justify-content: flex-end;
-  background-color: rgba(0, 0, 0, 0.7);
+  background:#292929;
 }
 
 nav ul {
@@ -48,7 +47,7 @@ a {
 }
 
 article {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(41, 41, 41, 0.4);
   padding: 10px 20px;
   border-radius: 3px;
   margin-bottom: 10px;
@@ -66,11 +65,11 @@ article {
 }
 
 h2 a {
-  color: aqua;
+  color: #212121;
 }
 
 form {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(41, 41, 41, 0.75);
   padding: 10px 20px;
   border-radius: 3px;
   display: flex;
@@ -97,7 +96,7 @@ input,
 textarea {
   min-height: 30px;
   border: 1px solid #000;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(41, 41, 41);
   color: #fff;
   font-size: 18px;
   padding: 3px 5px;
@@ -133,7 +132,6 @@ textarea {
   flex-direction: column;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
-  background: linear-gradient(to bottom, #00d2ff, #928dab);
   color: #fff;
   padding-top: 0;
 }
@@ -162,7 +160,7 @@ textarea {
   padding: 10px 15px;
   cursor: pointer;
   border: 1px solid #000;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(41, 41, 41, 0.4);
   color: #fff;
   width: 48px;
   border-radius: 3px;
@@ -181,4 +179,24 @@ textarea {
 
 .btn-delete {
   right: 10px;
+}
+
+
+/* add-post only */
+.preview-block{
+  background-color: rgba(41, 41, 41, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 440px;
+  height: 340px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.imgpreview{
+  background-color: rgba(41, 41, 41, 0.9);
+  width: 400px;
+  height: 300px;
+  border: #000;
+  border-width: 2px;
 }

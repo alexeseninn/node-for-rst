@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+<body>
+  <%- include('./partials/nav.ejs') %>
+
+  <input id="upload" type='file' />
+  <br>
+  <div class="preview-block">
+    <img class="imgpreview" id="myImg" src="#" width="300px">
+  </div>
+
+  <form id="post-form" method="post" action="/add-post">
+    <div class="form-info">
+      <label>Название файла
+        <input id="filename" type="text" name="title">
+      </label>
+      <label>Цена (пример: "от 8 000 000 р")
+        <input type="text" name="author">
+      </label>
+    </div>
+    <div class="form-text">
+      <label>Название авто (Nissan Juke)
+        <input name="text"></input>
+      </label>
+    </div>
+    <div class="form-button">
+      <input id="addButton" type="submit" value="Submit">
+    </div>
+  </form>
+  <script defer type="module" src="/add-script.js" ></script>  
+</body>
+</html>
