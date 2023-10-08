@@ -11,6 +11,36 @@ html {
     box-sizing: inherit;
 }
 
+/* auth only */
+.auth{
+    height: 200px;
+    margin-top: 32px;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+.closeb{
+    background: white;
+    border-style: none;
+}
+.closeb a{
+    color: #000;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.inputs input{
+    margin-top: 2px;
+    text-align: center;
+}
+.loginb{
+    margin-top: 8px;
+    width: 100px;
+}
+
 /*addThePost*/
 
 .addPost{
@@ -41,14 +71,19 @@ Section
 /*For Home Page Style*/
 
 .header{
-	background:#292929;
-	padding-top:80px;
+    height: 80px;
+    position: sticky;
+    top: -1px;
+	background:rgba(0,0,0,0.7);
+	padding-top:20px;
     display: flex;
     justify-content: center;
+    z-index: 3;
 }
 .header-container{
     width: 70%;
     display: flex;
+    align-items: center;
 }
 .header-logo{
     width: 100%;
@@ -67,7 +102,7 @@ Section
     margin-bottom: 16px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
     .header-logo{
         font-size: x-large;
     }
@@ -77,20 +112,34 @@ Section
     .menu-button img{
         scale: 0.8;
     }}
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 430px) {
+    .header{
+        height: 60px;
+    }
+    .header-container{
+        width: 90%;
+        display: flex;
+    }
     .header-logo{
         font-size: large;
     }
     .menu-button{
-        margin-bottom: 6px;
+        justify-content: center;
+        align-items: center;
     }
     .menu-button img{
         scale: 0.6;
-    }}
+    }
+    .overlay {
+        background-color: rgba(0, 0, 0, .55);
+        width: 100%;
+        overflow:hidden;
+        min-height:600px;
+    }
+}
 
 /* Dropdown Button */
 .dropbtn {
-    padding: 16px;
     font-size: 16px;
     border: none;
 }
@@ -102,9 +151,10 @@ Section
     display: none;
     position: absolute;
     background-color: gray;
+    right: 0;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
 }
 .dropdown-content a {
     color: black;
@@ -125,11 +175,111 @@ Section
     text-align: start;
 }
 
+/* Achivement Section */
+
+.left-void{
+    width: 15%;
+    background: rgba(0, 0, 0, 0.55);
+}
+.right-void{
+    width: 15%;
+    background: rgba(0, 0, 0, 0.55);
+}
+.achivement{
+    margin-top: -80px;
+	background: url(/cars.jpg) no-repeat top center fixed;
+	background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	overflow: hidden;
+	color:#fff;
+    display: flex;
+    flex-direction: row;
+}
+.achivement-content{
+    display: flex;
+}
+.achivement-details{
+    margin-top: 160px;
+	margin-bottom: 30px;
+    margin-left: 5%;
+    width: 90%;
+}
+.buttona {
+    display: inline-block;
+    color: black;
+    background-color:  rgba(255,255,255,.6);
+    font-weight: 700;
+    padding: .5em 2em;
+    margin-top: 2em;
+    outline: none;
+    border: 2px solid;
+    border-radius: 8px;
+    transition: 0.2s;
+} 
+.buttona:hover { 
+    background: rgba(255,255,255,.2);
+    text-decoration: none; 
+    color: #000;
+}
+.buttona:active { background: white; }
+.achivement-details .more {
+	padding-top:50px;
+}
+.achivement-details .more a{
+    color:#fff;
+	border-color:#fff;
+	
+}
+.achivement-details h2{
+	font-size: 44px;
+    font-weight: 500;
+    text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 25px;
+}
+.achivement-details p{
+	max-width:60%;
+}
+
+@media screen and (max-width: 900px) {
+    .achivement-details h2{
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 430px) {
+    .left-void{
+        width: 5%;
+        background: rgba(0, 0, 0, 0.55);
+    }
+    .right-void{
+        width: 5%;
+        background: rgba(0, 0, 0, 0.55);
+    }
+    .achivement{
+        max-height: 500px;
+        background: no-repeat top center/110% fixed url(/cars2.jpg);
+    }
+    .achivement-details{
+        margin-top: 60px;
+    }
+    .achivement-details h2{
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    .achivement-details p{
+        max-width:85%;
+    }
+}
+
 
 /*main*/
 
 .main{
 	display: flex;
+    width: 100%;
 }
 
 .left-side{
@@ -138,6 +288,10 @@ Section
 
 .center-side{
 	width: 70%;
+}
+
+.right-side{
+    width: 15%;
 }
 
 /*For About Section */
@@ -178,7 +332,19 @@ Section
 	font-size: 16px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+    .left-side{
+        width: 5%;
+    }
+    .left-void{
+        width: 5%;
+    }
+    .right-side{
+        width: 5%;
+    }
+    .center-side{
+        width: 90%;
+    }
     .about-us{
         padding-top: 12px;
         padding-bottom: 12px;
@@ -192,13 +358,13 @@ Section
         width: 100%;
     }
     .text-about{
-        font-size: 12px;
+        font-size: 14px;
     }
     .h5{
-        font-size: 16px;
+        font-size: 18px;
     }
     .h3{
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 700;
     }
 }
@@ -235,7 +401,7 @@ Section
     float: right;
 }
 
-.img{
+.grid-item img{
     max-width: 100%;
     aspect-ratio: 4/3;
 }
@@ -298,91 +464,38 @@ Section
     text-align: center;
 }
 
-.features-case h5{
-	font-size:18px;
-	font-family: 'Montserrat', sans-serif;
-	color:#000;
-	text-transform:uppercase;
+.pseudo2{ display: none; }
+
+.features-case img{
+    width: 48%;
+    height: min-content;
+    aspect-ratio: 117/65;
+}
+.features-void{
+    width: 25%;
 }
 .features-case h6{
 	font-family: 'Montserrat', sans-serif;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
+    .pseudo-container{
+        display: flex;
+        justify-content: center;
+    }
     .features-case{
-        margin-bottom:24px;
+        display: flex;
+        flex-direction: column;
     }
+    .pseudo{ display: none; }
+    .pseudo2{ display: flex; }
 }
-
-/* Achivement Section */
-
-.achivement{
-	background: url(/city.jpg) no-repeat top center fixed;
-	background-size: cover;
-	-moz-background-size: cover;
-	-webkit-background-size: cover;
-	-o-background-size: cover;
-    width: 100%;
-	overflow: hidden;
-	color:#fff;
-}
-.achivement-content{
-    display: flex;
-}
-.achivement-details{
-    margin-top: 160px;
-	margin-bottom: 30px;
-    margin-left: 5%;
-}
-.achivement-photo{
-    margin-right: 5%;
-    width: 45%;
-    display: flex;
-    justify-content: end;
-}
-.achivement-details .more {
-	padding-top:50px;
-}
-.achivement-details .more a{
-    color:#fff;
-	border-color:#fff;
-	
-}
-.achivement-details h2{
-	font-size: 54px;
-    text-transform: uppercase;
-	font-family: 'Montserrat', sans-serif;
-	margin-bottom: 25px;
-}
-.achivement-details p{
-	max-width:60%;
-}
-
-@media screen and (max-width: 899px) {
-    .achivement-photo{
-        display: none;
-    }
-}
-@media screen and (max-width: 600px) {
-    .achivement-details h2{
-        font-size: 32px;
+@media screen and (max-width: 430px) {
+    .features-case{
         margin-bottom: 20px;
+        margin-top: 24px;
     }
-}
-@media screen and (max-width: 400px) {
-    .achivement{
-        max-height: 400px;
-    }
-    .achivement-details{
-        margin-top: 60px;
-    }
-    .achivement-details h2{
-        font-size: 24px;
-        margin-bottom: 12px;
-    }
-    .achivement-details p{
-        max-width:85%;
-    }
+    .features-case img{ width: 100%; }
 }
 
 /*For Counterup Section*/
@@ -395,31 +508,35 @@ Section
     padding-top: 100px;
 }
 .counterup{
-    width: 100%;
+    width: 25%;
     display: flex;
     justify-content: center;
 }
 .counterup-photo{
+    display: flex;
 	width: 25%;
-	float:left;
+	align-items: center;
+    justify-content: center;
 }
 .counterup-content{
-	padding-top:10px;
+    width: 75%;
     padding-left: 4%;
 }
 .counterup-content h5{
 	font-family: 'Montserrat', sans-serif;
 	font-size:22px;
+    text-align: center;
 }
 .counterup-content h6{
 	font-size:18px;
 	font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
     .counterups{
         padding-bottom: 30px;
-        padding-top: 50px;
+        padding-top: 12px;
     }
     .counterup img{
         scale: 0.9;
@@ -427,6 +544,16 @@ Section
 }
 
 @media screen and (max-width: 1399px) {
+    .counterup-photo{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: baseline;
+    }
+    .counterup-content{
+        width: 100%;
+        padding-left: 0%;
+    }
     .counterup{
         flex-direction: column;
         justify-content: center;
@@ -444,7 +571,7 @@ Section
 .thankyou{
     justify-content: center;
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
 }
 .wrapper{
     display: flex;
@@ -502,30 +629,23 @@ Section
 	justify-content: center;
 	background:#292929;
 	color:#707070;
-	padding:50px 0;
+	padding: 20px 20px;
+    padding-bottom: 2px;
 }
-
-
-
-
-/* auth only */
-.auth{
-    width: 100%;
-    display: none;
-    flex-direction: column;
+footer a{
+    line-height: 120px;
+    text-decoration: none; 
+    color: #afafaf;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
-.inputs{
-    padding-top: 30px;
-    display: flex;
-    flex-direction: column;
-    width: 200px;
+footer a:hover{
+    text-decoration: none;
+    color: #afafaf;
 }
-.inputs input{
-    margin-top: 2px;
-    text-align: center;
-}
-.auth button{
-    margin-top: 8px;
-    width: 100px;
+@media screen and (max-width: 959px) {
+    footer a{
+        line-height: 80px;
+    }
 }

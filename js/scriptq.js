@@ -1,3 +1,5 @@
+const TOKEN = '5961153363:AAEHsfVlAxzE8MwONrbUFiFaw5XVZurtbsg';
+const CHAT_ID = '-859608299';
 const formData = new FormData();
 
 let sendMessage = document.getElementById('sendMessage');
@@ -55,23 +57,12 @@ function sendMsg() {
         return
     }
 
-    let text = "Имя:" + name +"   .Телефон:" + phone + "   .Сообщение:" + mess;
-    
-    formData.delete('messag')
-    formData.append("messag", text)
+    text = "Имя: " + name + ".     Телефон: " + phone + ".     Сообщение: " + mess;
 
-    fetch('http://localhost:3000/auth/sendmessage', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json; charset=utf-8"
-        },
-        body: JSON.stringify(Object.fromEntries(formData))
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
-
-    formData.delete('messag')
+    const url = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}`;
+    const xht = new XMLHttpRequest();
+    xht.open("GET", url);
+    xht.send();
 
     alert("Сообщение отправлено!")
 

@@ -3,23 +3,27 @@
   <%- include('./partials/head.ejs') %>
 <body>
   <%- include('./partials/nav.ejs') %>
-  <form id="post-form" method="post" action="/edit/<%= post.id %>?_method=PUT">
+  <form id="post-form">
     <div class="form-info">
-      <label>Post Title
+      <label>Id
+        <input type="text" name="id" value="<%= post.id %>">
+      </label>
+      <label>Filename
         <input type="text" name="title" value="<%= post.title %>">
       </label>
-      <label>Author
+      <label>Name
         <input type="text" name="author" value="<%= post.author %>">
       </label>
     </div>
     <div class="form-text">
-      <label>Post Text
-        <textarea name="text"><%= post.text %></textarea>
+      <label>Cost
+        <input type="text" name="text" value="<%= post.text %>">
       </label>
     </div>
     <div class="form-button">
-      <input type="submit" value="Submit">
+      <input id="addButton" type="submit" value="Submit">
     </div>
   </form>
+  <script defer type="module" src="/edit-post.js" ></script>  
 </body>
 </html>

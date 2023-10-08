@@ -17,8 +17,8 @@
               <span><%= createdAt.toLocaleDateString() %></span>
               <span><%= author %></span>
             </div>
-            <button class="btn-delete" data-id="<%= id %>">
-              <i class="fas fa-trash-alt" data-id="<%= id %>"></i>
+            <button class="btn-delete" data-id="<%= id %>" data-title="<%= title %>">
+              <i class="fas fa-trash-alt" data-id="<%= id %>" data-title="<%= title %>"></i>
             </button>
           </article>
         </li>
@@ -28,10 +28,28 @@
 
   <script>
     document.addEventListener('click', (e) => {
-      const id = e.target?.dataset?.id || null;
+      let tkn = getCookie("token")
+      const formData = new FormData();
+      const id = e.target?.dataset?.id, path = e.target?.dataset?.title;
+
+      formData.delete('id');      formData.append("id", id);
+      formData.delete('path');    formData.append("path", path);
+
+      function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+      }
+
       if (id) {
-        fetch(`/posts/${id}`, {
+        fetch(`http://localhost:3000/auth/delete`, {
           method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            "Authorization": `Bearer ${tkn}`
+            },
+            body: JSON.stringify(Object.fromEntries(formData))
         }).then(() => {
           window.location.reload();
         })
