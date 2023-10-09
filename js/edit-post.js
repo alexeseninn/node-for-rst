@@ -28,7 +28,7 @@ function uploadText(){
     let tkn = getCookie("token")
     alert("keks")
 
-    fetch('http://localhost:3000/auth/edit-post', {
+    fetch('http://shinsetsu-wheels.ru/auth/edit-post', {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',

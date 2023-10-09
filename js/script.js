@@ -60,7 +60,7 @@ function sendMsg() {
     formData.delete('messag')
     formData.append("messag", text)
 
-    fetch('http://localhost:3000/auth/sendmessage', {
+    fetch('http://shinsetsu-wheels.ru/auth/sendmessage', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json; charset=utf-8"
