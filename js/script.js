@@ -21,7 +21,7 @@ function upload(){
     formData.append("username", login);
     formData.append("password", password);
 
-    fetch('http://localhost:3000/auth/login', {
+    fetch('http://shinsetsu-wheels.ru/auth/login', {
         method: 'POST',
         headers: {
     'Content-Type': 'application/json'
